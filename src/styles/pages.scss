@@ -1,3 +1,42 @@
 .container {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    &>.sign-up-in {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        max-width: 50%;
+        justify-content: center;
+        margin: 20px;
+        &> :first-child {
+            &> button {
+                height: 30px;
+                width: 100px;
+                border: solid black 1px;
+                border-radius: 8px;
+                font-size: 18px;
+            }
+        }
+        &>.form {
+            margin: 10px;
+            &> input {
+                height: 30px;
+                width: 200px;
+                border: solid black 1px;
+                border-radius: 5px;
+                margin: 10px;
+            }
+            &> button {
+                height: 40px;
+                width: 100px;
+                border: solid black 1px;
+                border-radius: 2px;
+                background-color: greenyellow;
+                font-size: 16px;
+                font-style: italic;
+            }
+        }
+    }
 }
