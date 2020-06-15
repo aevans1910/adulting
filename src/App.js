@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SignUpIn from './pages/SignUpIn'
+import Home from './pages/Home'
 
 import './App.css';
 import './styles/pages.css'
@@ -8,7 +8,7 @@ import './styles/pages.css'
 function App() {
   return (
     <div className="App">
-      <SignUpIn />
+      <Home />
     </div>
   );
 }
