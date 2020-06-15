@@ -3,9 +3,6 @@ import React from 'react'
 export default function SignInForm() {
     return (
         <div className="sign-up-in">
-            <div>
-                <button>Sign In</button>
-            </div>
             <div className="form">
                 <p name="email">Email</p>
                 <input type="email" name="email" id="email" placeholder="Email"/>
