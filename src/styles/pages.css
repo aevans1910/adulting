@@ -132,11 +132,11 @@
   font-size: 18px;
 }
 
-.container > .sign-up-in > .form {
+.container > .sign-up-in > .Form {
   margin: 10px;
 }
 
-.container > .sign-up-in > .form > input {
+.container > .sign-up-in > .Form > input {
   height: 30px;
   width: 200px;
   border: solid black 1px;
@@ -144,7 +144,7 @@
   margin: 10px;
 }
 
-.container > .sign-up-in > .form > button {
+.container > .sign-up-in > .Form > button {
   height: 40px;
   width: 100px;
   border: solid black 1px;
