@@ -21,5 +21,6 @@ app.use(express.static('public'));
 require('./data/reddit-db');
 require('./controllers/posts.js')(app);
 
-
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+
+module.exports = app;
