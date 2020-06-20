@@ -12,13 +12,19 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li>
-          <a href="/posts/new" class="btn btn-primary navbar-btn">New Post</a>
-      </li>
+        {{#if currentUser}}
+            <a href="/posts/new" class="btn btn-primary navbar-btn">New Post</a>
+        {{/if}}      
+    </li>
 
-      <li><a href="/logout">Logout</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/sign-up">Sign Up</a></li>
-
+    <ul class="nav navbar-nav navbar-right">
+        {{#if currentUser}}
+        <li><a href="/logout">Logout</a></li>
+        {{else}}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/sign-up">Sign Up</a></li>
+        {{/if}}
+    </ul>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
