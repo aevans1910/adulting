@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default class SignInForm {
+export default class SignInForm extends Component {
     constructor(props){
+        super(props) 
         this.state = {
             email: "",
             password: "",
@@ -27,7 +28,7 @@ export default class SignInForm {
             <div className="sign-up-in">
                 <div className="form">
                     <p name="email">Email</p>
-                    <input value={email} onChange={(e) => this.setState({email:e.target.value})} type="email" name="email" id="email" placeholder="Email"/>
+                    <input valuex={email} onChange={(e) => this.setState({email:e.target.value})} type="email" name="email" id="email" placeholder="Email"/>
 
                     <p name="password">Password</p>
                     <input value={password} onChange={(e) => this.setState({password:e.target.value})} type="password" name="password" id="password" placeholder="Password"/>
