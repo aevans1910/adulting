@@ -74,6 +74,7 @@ app.get("/posts/:id", function (req, res) {
 
   // INDEX
   app.get('/', (req, res) => {
+      console.log("home is working!")
     let token = req.body.token;
     jwt.verify(token, process.env.SECRET, (err, decoded) => {
         if (err) {

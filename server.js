@@ -2,6 +2,7 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser');
 const handlebars = require('handlebars');
+const cors = require("cors")
 
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const hbs = exphbs.create({
@@ -16,6 +17,7 @@ const expressValidator = require('express-validator');
 // const app = express();
 var app = express();
 const port = 3050
+app.use(cors())
 
 var checkAuth = (req, res, next) => {
     console.log("Checking authentication");

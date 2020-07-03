@@ -18,6 +18,7 @@ module.exports = app => {
         const username = req.body.email; // check for the rest of these
         const password = req.body.password;
         // Find this user name
+        console.log(req.body)
         console.log("user name", username)
         console.log("user password", password)
 
