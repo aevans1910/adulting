@@ -7,21 +7,6 @@ const user = require('../models/user');
 
 module.exports = (app) => {
 
-//   app.get('/post/new', (req, res) => {
-//     // var currentUser = req.user;
-//     let token = req.body.token;
-//     let userId 
-//   // LOOK UP THE POST
-//     jwt.verify(token, process.env.SECRET, (err, decoded) => {
-//         if (err) {
-//             res.status(401).json({message: err.message})
-//             return console.log(err)
-//         }
-//         userId = decoded._id
-//     })
-//     res.render('posts-new', { currentUser })
-//   });
-
   // CREATE
   app.post("/post/new", (req, res) => {
     let token = req.body.token;
