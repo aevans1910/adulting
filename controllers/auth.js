@@ -48,9 +48,9 @@ module.exports = app => {
     });
 
     // SIGN UP FORM
-    app.get("/sign-up", (req, res) => {
-        res.render("sign-up");
-    });
+    // app.get("/sign-up", (req, res) => {
+    //     res.render("sign-up");
+    // });
 
     // SIGN UP POST
     app.post("/sign-up", (req, res) => {
