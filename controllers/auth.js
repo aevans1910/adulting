@@ -8,11 +8,6 @@ module.exports = app => {
         res.redirect('/');
     });
 
-    // LOGIN FORM
-    app.get('/log-in', (req, res) => {
-        res.render('log-in');
-    });
-
     // LOGIN
     app.post("/log-in", (req, res) => {
         const username = req.body.email; // check for the rest of these
@@ -47,11 +42,6 @@ module.exports = app => {
         });
     });
 
-    // SIGN UP FORM
-    // app.get("/sign-up", (req, res) => {
-    //     res.render("sign-up");
-    // });
-
     // SIGN UP POST
     app.post("/sign-up", (req, res) => {
         // Create User and JWT
@@ -60,7 +50,7 @@ module.exports = app => {
         user.save().then((user) => {
             var token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: "60 days" });
             res.cookie('nToken', token, { maxAge: 900000, httpOnly: true });
-            res.redirect('/');
+            res.send({token:token})
         })
         .catch(err => {
             console.log(err.message);

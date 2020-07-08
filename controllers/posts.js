@@ -9,15 +9,7 @@ module.exports = (app) => {
 
   // CREATE
   app.post("/post/new", (req, res) => {
-    let token = req.body.token;
-         let userId 
-        jwt.verify(token, process.env.SECRET, (err, decoded) => {
-            if (err) {
-                res.status(401).json({message: err.message})
-                return console.log(err)
-            }
-            userId = decoded._id
-        })
+        const userId = req.user._id
         User.findById(userId).then(user => {
             if (user) {
                 var post = new Post(req.body);
@@ -40,36 +32,21 @@ module.exports = (app) => {
   
   // SHOW
 app.get("/posts/:id", function (req, res) {
-  let token = req.body.token;
-  // LOOK UP THE POST
-    jwt.verify(token, process.env.SECRET, (err, decoded) => {
-        if (err) {
-            res.status(401).json({message: err.message})
-            return console.log(err)
-        }
-    })
-  Post.findById(req.params.id).populate({path:'comments', populate: {path: 'author'}}).populate('author')
-      .then(post => {
-          res.json({ post, currentUser });  
-      })
-      .catch(err => {
-          console.log(err.message);
-      });
-});
+    Post.findById(req.params.id).populate({path:'comments', populate: {path: 'author'}}).populate('author')
+        .then(post => {
+            res.json({ post });  
+        })
+        .catch(err => {
+            console.log(err.message);
+        });
+    });
 
   // INDEX
   app.get('/', (req, res) => {
-      console.log("home is working!")
-    let token = req.body.token;
-    jwt.verify(token, process.env.SECRET, (err, decoded) => {
-        if (err) {
-            res.status(401).json({message: err.message})
-            return console.log(err)
-        }
-    })
+    console.log("home is working!")
     Post.find().populate('author')
     .then(posts => {
-        res.render('posts-index', { posts, currentUser });
+        res.render('posts-index', { posts });
         // res.render('home', {});
     }).catch(err => {
         console.log(err.message);
@@ -78,17 +55,9 @@ app.get("/posts/:id", function (req, res) {
   
   // SUBREDDIT
 app.get("/n/:subreddit", function (req, res) {
-    let token = req.body.token;
-    // LOOK UP THE POST
-      jwt.verify(token, process.env.SECRET, (err, decoded) => {
-          if (err) {
-              res.status(401).json({message: err.message})
-              return console.log(err)
-          }
-      })
   Post.find({ subreddit: req.params.subreddit }).populate('author')
       .then(posts => {
-          res.render("posts-index", { posts, currentUser });
+          res.render("posts-index", { posts });
       })
       .catch(err => {
           console.log(err);
