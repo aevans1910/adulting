@@ -10,22 +10,20 @@ export default class SignUpForm extends Component {
             username: "",
         }
     }
-    submit(){
+    async submit(){
         console.log("fetch is working!!")
-        fetch("http://localhost:3050/sign-up", {
+        const res = await fetch("http://localhost:3050/sign-up", {
             method:"POST",
             mode:"cors",
             headers:{"Content-Type" : "application/json"},
             body: JSON.stringify(this.state)
         })
-        .then(res => res.json()).then(data => {
-            console.log(data)
+        const data = await res.json()
+        console.log(data)
 
             // TODO: save the token to local storage
             // TODO: redirect to home page
             // TODO: use react router dom
-        })
-        .catch(err => console.log(err))
     }
     render() {
         const {email, password, username, rePassword} = this.state
@@ -39,7 +37,7 @@ export default class SignUpForm extends Component {
                 <p name="password">Password</p>
                 <input value={password} onChange={(e) => this.setState({password:e.target.value})} type="password" name="password" id="password" placeholder="Password"/>
                 <p name="re-password">Re-enter password</p>
-                <input value={rePassword} onChange={(e) => this.setState({password:e.target.value})} type="password" name="password" id="password" placeholder="Password"/>
+                <input value={rePassword} onChange={(e) => this.setState({rePassword:e.target.value})} type="password" name="password" id="password" placeholder="Password"/>
                 <button onClick={()=>this.submit()} type="submit">SIGN UP</button>
             </div>
         </div>
