@@ -14,6 +14,7 @@ const Temp = () => (
     HOME
     <Link to="/sign-up">Sign-Up</Link>
     <Link to="/sign-in">Sign-In</Link>
+    <Link to="/log-out">Log-out</Link>
   </div>
 );
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/' exact component={Temp} />
         <Route path='/sign-up' component={SignUpForm} />
         <Route path='/sign-in' component={SignInForm} />
+        {/* <Route path='/log-out' component={}/> */}
         <Route render={routeProps => <p>404</p>} />
       </Switch>
     </Router>
