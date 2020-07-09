@@ -5,7 +5,7 @@ module.exports = app => {
     // LOGOUT
     app.get('/log-out', (req, res) => {
         res.clearCookie('nToken');
-        res.redirect('/');
+        res.redirect('/');  
     });
 
     // LOGIN
