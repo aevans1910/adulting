@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+// import { Button } from 'semantic-ui-react';
+// import { BrowserRouter as Router, Route, Link } from "reactrouterdom";
 
 export default class Home extends Component{
     constructor(props) {
@@ -18,7 +20,9 @@ export default class Home extends Component{
         return (
             <div className="container">
                 <div className="categories">
+                {/* <Link to="/dashboard"> */}
                     <button>Health</button>
+                {/* </Link> */}
                     <button>Fitness</button>
                     <button>Finances</button>
                     <button>Home</button>
@@ -29,7 +33,7 @@ export default class Home extends Component{
             {/* post component that will take the entire post object as a prop
             change 31 to post => <Post post={post}/>
             same for comments and replies */}
-        {this.state.data.map(post => <p>{post.title}</p>)}
+        {this.state.data.map(post => <p><li><a href='/posts/{post.id}'>{post.title}</a></li></p>)}
                 </div>
             </div>
         )
