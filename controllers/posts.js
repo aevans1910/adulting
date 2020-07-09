@@ -47,7 +47,7 @@ app.get("/posts/:id", function (req, res) {
     console.log("home is working!")
     Post.find().populate('author')
     .then(posts => {
-        res.render('posts-index', { posts });
+      res.json(posts)
         // res.render('home', {});
     }).catch(err => {
         console.log(err.message);
