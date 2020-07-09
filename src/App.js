@@ -28,7 +28,8 @@ const Temp = () => {
     </> :
       <button onClick={() => { 
         Cookies.remove('token') 
-        history.push('/') 
+        // history.push('/') 
+        window.location.replace("/")
       }}>Log Out</button>
     }
   </div>
@@ -39,12 +40,8 @@ function App() {
   return (
     <Router>
         <Temp />
-        {/* <Route path='/' exact component={Temp} /> */}
         <Route path='/sign-up' component={SignUpForm} />
         <Route path='/sign-in' component={SignInForm} />
-        {/* <Redirect to='/' /> */}
-        {/* <Route path='/log-out' component={LogOut} /> */}
-        {/* <Route path='/log-out' component={}/> */}
         <Route render={routeProps => <p>404</p>} />
     </Router>
   );

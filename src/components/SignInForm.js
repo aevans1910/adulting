@@ -23,7 +23,9 @@ export default class SignInForm extends Component {
             console.log(data)
             console.log(this.history)
             Cookies.set('token', data.token)
-            this.history.push("/")
+            // history.push("/")
+
+            window.location.replace("/")
 
             // TODO: save the token to local storage
             // TODO: redirect to home page
