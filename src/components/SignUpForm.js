@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Cookies from 'js-cookie'
 
 export default class SignUpForm extends Component {
     constructor(props){
@@ -10,6 +11,25 @@ export default class SignUpForm extends Component {
             username: "",
         }
     }
+    // submit(){
+    //     console.log("fetch is working!!")
+    //     fetch("http://localhost:3050/sign-up", {
+    //         method:"POST",
+    //         mode:"cors",
+    //         headers:{"Content-Type" : "application/json"},
+    //         body: JSON.stringify(this.state)
+    //     })
+    //     .then(res => res.json()).then(data => {
+    //         console.log(data)
+    //         console.log(this.props.history)
+    //         this.props.history.push("/")
+
+    //         // TODO: save the token to local storage
+    //         // TODO: redirect to home page
+    //         // TODO: use react router dom
+    //     })
+    //     .catch(err => console.log(err))
+
     async submit(){
         console.log("fetch is working!!")
         const res = await fetch("http://localhost:3050/sign-up", {
@@ -20,10 +40,8 @@ export default class SignUpForm extends Component {
         })
         const data = await res.json()
         console.log(data)
-
-            // TODO: save the token to local storage
-            // TODO: redirect to home page
-            // TODO: use react router dom
+        Cookies.set('token', data.token)
+        // return(<Redirect to="/" />)
     }
     render() {
         const {email, password, username, rePassword} = this.state

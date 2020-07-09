@@ -1,21 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-// import Home from './components/Home';
-
-// import SignUpIn from './pages/SignUpIn'
-
+import { Redirect, useHistory } from 'react-router-dom'
 import './App.css';
 import './styles/pages.css'
 import SignInForm from './components/SignInForm';
 import SignUpForm from './components/SignUpForm';
+import Cookies from 'js-cookie'
 
 const Temp = () => {
+
+  // const [state, setState] = useState({token: "sdsds"})
+
+  const token = Cookies.get('token')
+  // useEffect(() => {
+  //   setState({token: token})
+  //   console.log(state)
+  // }, [])
+
+  const history = useHistory()
   return(
   <div>
-    HOME
-    <Link to="/sign-up">Sign-Up</Link>
-    <Link to="/sign-in">Sign-In</Link>
-    <button onClick={()=>this.submit()} type="submit">SIGN UP</button>
+    navbar
+    {token === undefined ? 
+    <>
+      <Link to="/sign-up">Sign-Up</Link>
+      <Link to="/sign-in">Sign-In</Link> 
+    </> :
+      <button onClick={() => { 
+        Cookies.remove('token') 
+        history.push('/') 
+      }}>Log Out</button>
+    }
   </div>
   )
 };
@@ -23,13 +38,14 @@ const Temp = () => {
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path='/' exact component={Temp} />
+        <Temp />
+        {/* <Route path='/' exact component={Temp} /> */}
         <Route path='/sign-up' component={SignUpForm} />
         <Route path='/sign-in' component={SignInForm} />
+        {/* <Redirect to='/' /> */}
+        {/* <Route path='/log-out' component={LogOut} /> */}
         {/* <Route path='/log-out' component={}/> */}
         <Route render={routeProps => <p>404</p>} />
-      </Switch>
     </Router>
   );
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Cookies from 'js-cookie'
 
 export default class SignInForm extends Component {
     constructor(props){
@@ -11,6 +12,7 @@ export default class SignInForm extends Component {
     }
     submit(){
         console.log("fetch is working!!")
+        console.log("STATE ",this.state)
         fetch("http://localhost:3050/log-in", {
             method:"POST",
             mode:"cors",
@@ -19,8 +21,9 @@ export default class SignInForm extends Component {
         })
         .then(res => res.json()).then(data => {
             console.log(data)
-            console.log(this.props.history)
-            this.props.history.push("/")
+            console.log(this.history)
+            Cookies.set('token', data.token)
+            this.history.push("/")
 
             // TODO: save the token to local storage
             // TODO: redirect to home page
