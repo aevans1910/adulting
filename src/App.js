@@ -6,6 +6,7 @@ import './styles/pages.css'
 import SignInForm from './components/SignInForm';
 import SignUpForm from './components/SignUpForm';
 import Cookies from 'js-cookie'
+import Home from "./pages/Home"
 
 const Temp = () => {
 
@@ -16,7 +17,7 @@ const Temp = () => {
   //   setState({token: token})
   //   console.log(state)
   // }, [])
-
+const [redirect, updateRedirect] = useState(false)
   const history = useHistory()
   return(
   <div>
@@ -28,10 +29,14 @@ const Temp = () => {
     </> :
       <button onClick={() => { 
         Cookies.remove('token') 
+
         // history.push('/') 
-        window.location.replace("/")
+        // window.location.replace("/")
+        updateRedirect(true)
+
       }}>Log Out</button>
     }
+    {redirect && <Redirect to="/"/>}
   </div>
   )
 };
@@ -40,6 +45,7 @@ function App() {
   return (
     <Router>
         <Temp />
+        <Route path='/' component={Home} />
         <Route path='/sign-up' component={SignUpForm} />
         <Route path='/sign-in' component={SignInForm} />
         <Route render={routeProps => <p>404</p>} />
