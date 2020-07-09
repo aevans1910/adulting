@@ -10,17 +10,19 @@ module.exports = app => {
 
     // LOGIN
     app.post("/log-in", (req, res) => {
-        const username = req.body.email; // check for the rest of these
+        const username = req.body.username; // check for the rest of these
         const password = req.body.password;
+        const email = req.body.email
         // Find this user name
-        console.log(req.body)
+        console.log(req.body)   
         console.log("user name", username)
         console.log("user password", password)
 
-        User.findOne({ username }, "username password")
+        User.findOne({ username : username, email : email }, "username password")
         .then(user => {
             if (!user) {
             // User not found
+            console.log('user TEST!!!')
             return res.status(401).send({ message: "Wrong Username or Password" });
             }
             // Check the password
