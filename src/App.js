@@ -46,6 +46,9 @@ function App() {
     <Router>
         <Temp />
         <Route path='/' component={Home} />
+  {/* <Route path='/' component={() => {
+    <SignUpForm user={}/>
+  }}/> */}
         <Route path='/sign-up' component={SignUpForm} />
         <Route path='/sign-in' component={SignInForm} />
         <Route render={routeProps => <p>404</p>} />

@@ -14,7 +14,7 @@ export default class Home extends Component{
         console.log("working Constructor")
         fetch("http://localhost:3050/")
         .then(res => res.json())
-        .then(data => this.setState({data}, () => console.log(this.state.data)))
+        .then(data => this.setState({data:data.posts}, () => console.log(this.state.data)))
     } 
     render() {
         return (
