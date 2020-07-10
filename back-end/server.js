@@ -1,17 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-require("dotenv").config()
+require("dotenv").config();
 var cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const expressValidator = require('express-validator');
-// const app = express();
-var app = express();
+
+const app = express();
+const connectDb = require('./src/connection');
+
+// var app = express();
 const port = 3000
 
 // Use Body Parser
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 // Add after body parser initialization!
 // get data back from db 
@@ -42,7 +46,7 @@ var checkAuth = (req, res, next) => {
   };
 app.use(checkAuth);
 
-require('./data/reddit-db');
+require('./data/adulting-db');
 require('./controllers/posts.js')(app);
 require('./controllers/comments.js')(app);
 require('./controllers/auth.js')(app);
