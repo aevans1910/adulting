@@ -1,0 +1,156 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.container > .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 30px 500px;
+}
+
+.container > .categories > button {
+  height: 25px;
+  width: 70px;
+  border: solid black 1px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.container > .trending-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: solid black 1px;
+  border-radius: 10px;
+  margin: 20px 200px;
+}
+
+.container > .trending-post > .image {
+  width: 200%;
+  height: 250px;
+  background-color: gray;
+  border: solid black 1px;
+  border-radius: 10px;
+}
+
+.container > .trending-post > .description {
+  padding: 20px 50px;
+  text-align: left;
+}
+
+.container > .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px 200px;
+}
+
+.container > .bottom > .latest-news {
+  width: 70%;
+  text-align: left;
+  margin: 0px 100px 0px 0px;
+}
+
+.container > .bottom > .latest-news > .article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 15px;
+  border: solid black 1px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.container > .bottom > .latest-news > .article > .image {
+  width: 150%;
+  background-color: gray;
+  border: solid black 1px;
+  border-radius: 10px;
+  margin: 5px 0px;
+}
+
+.container > .bottom > .latest-news > .article > .text {
+  margin: 10px 30px;
+}
+
+.container > .bottom > .communities {
+  border: solid black 1px;
+  border-radius: 10px;
+  width: 25%;
+}
+
+.container > .sign-up-in {
+  font-family: sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 16px;
+  max-width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px;
+}
+
+.container > .sign-up-in > :first-child > button {
+  height: 30px;
+  width: 100px;
+  border: solid black 1px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.container > .sign-up-in > .form {
+  margin: 10px;
+}
+
+.container > .sign-up-in > .form > input {
+  height: 30px;
+  width: 200px;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.container > .sign-up-in > .form > button {
+  height: 40px;
+  width: 100px;
+  border: solid black 1px;
+  border-radius: 2px;
+  background-color: greenyellow;
+  font-size: 16px;
+  font-style: italic;
+}
+/*# sourceMappingURL=pages.css.map */
