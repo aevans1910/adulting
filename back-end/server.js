@@ -9,7 +9,7 @@ const app = express();
 const connectDb = require('./src/connection');
 
 // var app = express();
-const port = 3000
+const port = 8080
 
 // Use Body Parser
 app.use(cookieParser());
