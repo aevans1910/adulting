@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { Button } from 'semantic-ui-react';
 // import { BrowserRouter as Router, Route, Link } from "reactrouterdom";
 
-export default class Home extends Component{
+export default class Categories extends Component{
     constructor(props) {
         super(props)
         console.log("working Constructor")
@@ -20,12 +20,12 @@ export default class Home extends Component{
         return (
             <div className="container">
                 <div className="categories">
+                    <button>All</button>
                 {/* <Link to="/dashboard"> */}
                     <button>Health</button>
                 {/* </Link> */}
                     <button>Fitness</button>
                     <button>Finances</button>
-                    <button>Home</button>
                     <button>Food</button>
                     <button>Repairs</button>
                 </div>
@@ -38,4 +38,4 @@ export default class Home extends Component{
             </div>
         )
     }
-    }
+}

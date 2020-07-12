@@ -4,6 +4,8 @@ import { Redirect, useHistory } from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 
+import "../styles/navbar.css"
+
 export default function Navbar() {
 
     // const [state, setState] = useState({token: "sdsds"})
