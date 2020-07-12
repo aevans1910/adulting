@@ -1,19 +1,13 @@
 version: "3.7"
 services:
-    ui:
-        ui:
-            build: ./ui
-            ports:
-              - '3000:3000'
-            depends_on:
-              - api
-          api:
-            build: ./api
-            ports:
-              - '8080:8080'
-            depends_on:
-              - mongo
-          mongo:
-            image: mongo
-            ports:
-              - '27017:27017'
+    web:
+      build:
+        context: .
+      ports:
+        - '3050:3050'
+      depends_on:
+        - mongo
+    mongo:
+      image: mongo
+      ports:
+        - '27017:27017'

@@ -1,4 +1,5 @@
 <div class="row">
+    {{#if currentUser}}
     <div class="col-sm-8 col-sm-offset-2">
         <ul>
             {{#each posts}}
@@ -11,8 +12,20 @@
                     <div class="text-right">
                         <a href="/n/{{this.subreddit}}">{{this.subreddit}}</a>
                     </div>
+                    <form class="vote-up" data-id="{{this._id}}">
+                        <button type="submit">Vote Up</button>
+                    </form>
+                    <p>                 
+                {{this.voteScore}}
+                    </p>
+                    <form class="vote-down" data-id="{{this._id}}">
+                        <button type="submit">Vote Down</button>
+                    </form>
                 </li>
             {{/each}}
         </ul>
     </div>
+{{else}}
+<h2>Please Log In To See Posts</h2>
+{{/if}}
 </div>
