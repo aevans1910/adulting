@@ -68,7 +68,7 @@ form input, textarea {
   font-size: 10px;
   color: var(--color-litegray);
 }
-button[type=submit]{
+form > button[type=submit]{
   border-color: var(--color-green);
   background-color: var(--color-darkwhite);
   margin: 1rem 0;
@@ -81,10 +81,45 @@ button[type=submit]{
   letter-spacing: 5px;
   transition: 500ms;
 }
-button[type=submit]:hover{
+form > button[type=submit]:hover{
   background: var(--color-green);
   color: white;
   box-shadow: 0 2px var(--color-dark);
   cursor: pointer;
 }
 
+/* Success */
+/* .nav-item {
+  height: 50px;
+  width: 100px;
+  border: solid var(--color-litegreen) 1px;
+  background-color: var(--color-litegreen);
+  border-radius: 0px 0px 5px 5px;
+} */
+a > .btn-success {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: var(--color-litegreen);
+  color: var(--color-dark);
+  box-shadow: var(--color-green);
+  transition: none;
+  font-family: var(--font-header);
+  width: 100px;
+  height: 50px;
+  /* border: solid var(--color-litegreen) 1px; */
+  border-radius: 0px 0px 5px 5px;
+}
+a > .btn-success:hover {
+  box-shadow: 0 4px var(--color-green);
+}
+a > .btn-success:active {
+  box-shadow: 0 0 var(--color-green);
+}
+.nav-item > a {
+  text-decoration: none;
+}
+.navbar-nav > li {
+  list-style: none;
+}
+      
