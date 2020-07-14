@@ -11,12 +11,13 @@
   <body>
 
     <nav>
-        <label class="logo" href="/">Adulting</label>
+        <label class="logo"><a  href="/posts/:id">Adulting</a>
+        </label>
             <ul>
                 <li>
                     {{#if currentUser}}
-                        <a href="/post/new" class="btn-success">
-                            <div class="btn-success"><p>NEW POST</p></div>
+                        <a href="/post/new">
+                            <div><p>NEW POST</p></div>
                         </a>
                     {{/if}}
                 </li>

@@ -32,13 +32,7 @@
     --font-special: 'Consolas', 'courier-new';
     scroll-behavior: smooth;
 }
-body {
-  background-color: #0D152B;
-}
-body::selection{
-  color: white;
-  background: #0089f2;
-}
+
 
 /* Side Scroll Bar */
 body::-webkit-scrollbar{
@@ -57,70 +51,96 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbar-thumb:hover{
   background: linear-gradient(#2691d9,#954eb1);
 }
-
+small {
+  color: var(--color-dark);
+}
 
 /* Navigation Bar */
-nav{
-  top: 0;
-  left: 0;
-  height: 80px;
-  width: 100%;
-  background: white;
-  box-shadow: 1px 1px 15px silver;
-  z-index: 1;
-  transition: top 0.3s;
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
-label{
-  line-height: 65px;
-  padding: 0 80px;
-  font-size: 40px;
-  color: #0089f2;
-  letter-spacing: -1px;
+body{
+  font-family: sans-serif;
+
+  overflow: hidden;
   user-select: none;
 }
-nav label {
-  margin-top: 10px;
+nav .logo a{
+  color: white;
+  font-size: 33px;
+  font-weight: bold;
+  line-height: 70px;
+  padding-left: 110px;
+  transition: .5s;
+}
+nav{
+  height: 70px;
+  background: #063247;
+  box-shadow: 0 3px 15px rgba(0,0,0,.4);
 }
 nav ul{
-  list-style: none;
-  position: absolute;
-  right: 0;
-  top: -7px;
-  display: flex;
-  line-height: 80px;
-  margin-right: 50px;
+  float: right;
+  margin-right: 30px;
 }
 nav ul li{
-  margin: 0 5px;
-  align-items: center;
-  
-}
-nav ul li.active a{
-  color: #0089f2;
-  box-shadow: inset 0 0 5px #0a87f5,
-              inset 0 0 10px #85c3fa,
-              inset 0 0 15px #b6dbfc;
-}
-nav ul li:hover a{
-  color: #0089f2;
-  box-shadow: inset 0 0 5px #0a87f5,
-              inset 0 0 10px #85c3fa,
-              inset 0 0 15px #b6dbfc;
+  display: inline-block;
 }
 nav ul li a{
-  color: grey;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: 'Open Sans',sans-serif;
+  color: white;
+  display: block;
+  padding: 0 15px;
+  line-height: 70px;
+  font-size: 20px;
+  background: #063247;
+  transition: .5s;
 }
-nav ul li a.active2{
-  color: #0089f2;
-  box-shadow: inset 0 0 5px #0a87f5,
-              inset 0 0 10px #85c3fa,
-              inset 0 0 15px #b6dbfc;
+nav .logo a:hover,
+nav ul li a:hover,
+nav ul li a.active{
+  color: #23dbdb;
+}
+nav ul ul{
+  position: absolute;
+  top: 85px;
+  border-top: 3px solid #23dbdb;
+  opacity: 0;
+  visibility: hidden;
+}
+nav ul li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: .3s linear;
+}
+nav ul ul li{
+  width: 150px;
+  display: list-item;
+  position: relative;
+  border: 1px solid #042331;
+  border-top: none;
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+nav ul ul ul{
+  border-top: none;
+}
+nav ul ul ul li{
+  position: relative;
+  top: -70px;
+  left: 150px;
+}
+nav ul ul li a i{
+  margin-left: 45px;
+}
+section{
+  background: url(bg.jpeg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 
@@ -132,22 +152,31 @@ nav ul li a.active2{
 form {
   max-width: 500px;
   margin: 2rem auto;
-  border: 3px solid var(--color-dark);
+  border: 3px solid #063247;
   padding: 2rem;
   font-family: sans-serif;
   text-transform: uppercase;
   border-radius: 15px;
+  background-color: var(--color-darkwhite);
 }
 form label {
   display: block;
   padding: 10px;
   font-size: 19px;
-  color: whitesmoke;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+form label a {
+  color:white;
+}
+form h1 {
+  text-align: center;
+  margin-right: 20px;
 }
 form input, textarea {
   display: block;
   font-family: sans-serif;
-  width: 100%;
+  width: 90%;
   margin: 0 .25rem;
   padding: .5rem;
   min-width: 125px;
@@ -156,10 +185,12 @@ form input, textarea {
   border-radius: 5px;
   font-size: 18px;
   transition: .5s ease-in-out;
+  margin-left: 0;
 }
+
 .text-muted {
   font-size: 10px;
-  color: var(--color-litegray);
+  color: var(--color-dark);
 }
 form > button[type=submit]{
   border-color: var(--color-blue);
@@ -208,7 +239,7 @@ a > .btn-success:active {
   justify-content: flex-end;
 }
 .text-right > button[type=submit]{
-  border-color: var(--color-green);
+  border-color: var(--color-liteblue);
   background-color: var(--color-darkwhite);
   margin: 1rem 0;
   width: auto;
@@ -221,10 +252,27 @@ a > .btn-success:active {
   transition: 500ms;
 }
 .text-right > button[type=submit]:hover{
-  background: var(--color-green);
+  background: var(--color-liteblue);
   color: white;
   box-shadow: 0 2px var(--color-dark);
   cursor: pointer;
 }
 
+#votes {
+  border: none;
+  background-color: none;
+  border-radius: 45px;
+}
 
+.vote-box {
+  background-color: var(--color-darkwhite);
+  max-width: 60%;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+legend {
+  font-size: calc(var(--base-font-size) * 2.5);
+  text-align: center;
+
+}
