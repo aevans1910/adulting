@@ -6,6 +6,7 @@
 :root {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     --color-green: #2ECC71;
     --color-litegreen: #5EFCA1;
     --color-gray: #354546;
@@ -29,14 +30,105 @@
     --font-header: 'Quicksand', sans-serif;
     --font-nav: 'Raleway', sans-serif;
     --font-special: 'Consolas', 'courier-new';
-
+    scroll-behavior: smooth;
 }
+body {
+  background-color: #0D152B;
+}
+body::selection{
+  color: white;
+  background: #0089f2;
+}
+
+/* Side Scroll Bar */
+body::-webkit-scrollbar{
+  width: 16px;
+}
+body::-webkit-scrollbar-track{
+  background: #e6e6e6;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+body::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: linear-gradient(#3498db,#9b59b6);
+}
+body::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(#2691d9,#954eb1);
+}
+
+
+/* Navigation Bar */
+nav{
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background: white;
+  box-shadow: 1px 1px 15px silver;
+  z-index: 1;
+  transition: top 0.3s;
+}
+label{
+  line-height: 65px;
+  padding: 0 80px;
+  font-size: 40px;
+  color: #0089f2;
+  letter-spacing: -1px;
+  user-select: none;
+}
+nav label {
+  margin-top: 10px;
+}
+nav ul{
+  list-style: none;
+  position: absolute;
+  right: 0;
+  top: -7px;
+  display: flex;
+  line-height: 80px;
+  margin-right: 50px;
+}
+nav ul li{
+  margin: 0 5px;
+  align-items: center;
+  
+}
+nav ul li.active a{
+  color: #0089f2;
+  box-shadow: inset 0 0 5px #0a87f5,
+              inset 0 0 10px #85c3fa,
+              inset 0 0 15px #b6dbfc;
+}
+nav ul li:hover a{
+  color: #0089f2;
+  box-shadow: inset 0 0 5px #0a87f5,
+              inset 0 0 10px #85c3fa,
+              inset 0 0 15px #b6dbfc;
+}
+nav ul li a{
+  color: grey;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Open Sans',sans-serif;
+}
+nav ul li a.active2{
+  color: #0089f2;
+  box-shadow: inset 0 0 5px #0a87f5,
+              inset 0 0 10px #85c3fa,
+              inset 0 0 15px #b6dbfc;
+}
+
 
 .comment-indent {
   margin-left: 20px;
 }
 
-/* Form Style */
+/* Forms */
 form {
   max-width: 500px;
   margin: 2rem auto;
@@ -48,8 +140,9 @@ form {
 }
 form label {
   display: block;
-  padding: 0.5rem 0.25rem;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 19px;
+  color: whitesmoke;
 }
 form input, textarea {
   display: block;
@@ -59,7 +152,7 @@ form input, textarea {
   padding: .5rem;
   min-width: 125px;
   border: 1px solid transparent;
-  border-left: 3px solid var(--color-green);
+  border-left: 5px solid var(--color-liteblue);
   border-radius: 5px;
   font-size: 18px;
   transition: .5s ease-in-out;
@@ -69,10 +162,10 @@ form input, textarea {
   color: var(--color-litegray);
 }
 form > button[type=submit]{
-  border-color: var(--color-green);
+  border-color: var(--color-blue);
   background-color: var(--color-darkwhite);
-  margin: 1rem 0;
-  width: auto;
+  margin: 2rem 0 2rem 4rem;
+  width: 70%;
   text-transform: uppercase;
   padding: 15px;
   border-radius: 20px;
@@ -82,7 +175,7 @@ form > button[type=submit]{
   transition: 500ms;
 }
 form > button[type=submit]:hover{
-  background: var(--color-green);
+  background: var(--color-liteblue);
   color: white;
   box-shadow: 0 2px var(--color-dark);
   cursor: pointer;
@@ -107,12 +200,6 @@ a > .btn-success:hover {
 }
 a > .btn-success:active {
   box-shadow: 0 0 var(--color-green);
-}
-.nav-item > a {
-  text-decoration: none;
-}
-.navbar-nav > li {
-  list-style: none;
 }
 
 /* New post submit button */
@@ -139,4 +226,5 @@ a > .btn-success:active {
   box-shadow: 0 2px var(--color-dark);
   cursor: pointer;
 }
-      
+
+
