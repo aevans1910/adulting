@@ -88,14 +88,7 @@ form > button[type=submit]:hover{
   cursor: pointer;
 }
 
-/* Success */
-/* .nav-item {
-  height: 50px;
-  width: 100px;
-  border: solid var(--color-litegreen) 1px;
-  background-color: var(--color-litegreen);
-  border-radius: 0px 0px 5px 5px;
-} */
+/* New post button */
 a > .btn-success {
   display: flex;
   justify-content: center;
@@ -107,7 +100,6 @@ a > .btn-success {
   font-family: var(--font-header);
   width: 100px;
   height: 50px;
-  /* border: solid var(--color-litegreen) 1px; */
   border-radius: 0px 0px 5px 5px;
 }
 a > .btn-success:hover {
@@ -121,5 +113,30 @@ a > .btn-success:active {
 }
 .navbar-nav > li {
   list-style: none;
+}
+
+/* New post submit button */
+.text-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.text-right > button[type=submit]{
+  border-color: var(--color-green);
+  background-color: var(--color-darkwhite);
+  margin: 1rem 0;
+  width: auto;
+  text-transform: uppercase;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: calc(var(--base-font-size) * 1.5);
+  font-weight: bold;
+  letter-spacing: 5px;
+  transition: 500ms;
+}
+.text-right > button[type=submit]:hover{
+  background: var(--color-green);
+  color: white;
+  box-shadow: 0 2px var(--color-dark);
+  cursor: pointer;
 }
       
