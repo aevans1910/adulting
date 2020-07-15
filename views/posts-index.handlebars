@@ -1,33 +1,32 @@
-<div class="row">
+<div>
     {{#if currentUser}}
-    <div class="col-sm-8 col-sm-offset-2">
+    <div>
         <ul>
+
             {{#each posts}}
-                <li class="list-group-item">
-                    <div class="lead">
-                        <a href="/posts/{{this._id}}">{{this.title}}</a>
-                    </div>
-                    <a href="/users/{{this.author.username}}"><div><small>{{this.author.username}}</small></div></a>
+            <li class="list-group-item">
+                <div class="vote-box">
+                        <a href="/posts/{{this._id}}">{{this.title}} {{this.voteScore}}</a>
+                    <a href="/users/{{this.author.username}}">
+                        <small>{{this.author.username}}</small>
+                    </a>
                     <a href="{{this.url}}" target="_blank">{{this.url}}</a>
-                    <div class="text-right">
+                    
                         <a href="/n/{{this.subreddit}}">{{this.subreddit}}</a>
-                    </div>
-                    <h3>                 
-                {{this.voteScore}}
-                    </h3>
-                    <div class="vote-box">
-                    <form id="votes" class="vote-up" data-id="{{this._id}}">
-                        <button type="submit">Vote Up</button>
-                    </form>
-                    <form id="votes" class="vote-down" data-id="{{this._id}}">
-                        <button type="submit">Vote Down</button>
-                    </form>
-                    </div>
-                </li>
+                        <div id="voting">
+                            <form id="votes" class="vote-up" data-id="{{this._id}}">
+                                <button type="submit">Vote Up</button>
+                            </form>
+                            <form id="votes" class="vote-down" data-id="{{this._id}}">
+                                <button type="submit">Vote Down</button>
+                            </form>
+                        </div>
+                </div>
+            </li>
             {{/each}}
         </ul>
     </div>
-{{else}}
-<h2>Please Log In To See Posts</h2>
-{{/if}}
+    {{else}}
+    <h2>Please Log In To See Posts</h2>
+    {{/if}}
 </div>

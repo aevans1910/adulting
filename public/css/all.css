@@ -262,13 +262,23 @@ a > .btn-success:active {
   border: none;
   background-color: none;
   border-radius: 45px;
+  padding: 0;
+}
+#votes > button {
+  width: 20%;
 }
 
 .vote-box {
   background-color: var(--color-darkwhite);
-  max-width: 60%;
+  max-width: 48%;
   margin: 0 auto;
-  border-radius: 50%;
+  border-radius: 10%;
+}
+
+#voting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 legend {
