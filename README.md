@@ -2,7 +2,7 @@
 # **Adulting**
 
 
-![Logo](static/logogif.gif)
+![Logo](static/images/gifLogo.gif)
 
 ## Adulting is a forum for crowd-sourced information on how to be an adult.
 
