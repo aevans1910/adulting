@@ -5,7 +5,7 @@
 
 ##### Accomplice
 
-## Adulting is a forum for crowd-sourced information on how to be an adult.*
+## Adulting is a forum for crowd-sourced information on how to be an adult.
 
 ___
 
@@ -63,14 +63,14 @@ It uses a Node.js framework with Handlebars.js views.
 
 #### Getting Started
 
+##Installation instructions
+
 Run the following commands:
 
 npm install 
 
 
 #### Useful Links
-
-Installation instructions.
 
 Frameworks: Node.js, Handlebars.js
 
