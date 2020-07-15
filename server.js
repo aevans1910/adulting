@@ -29,6 +29,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(expressValidator());
 app.use(express.static('public'));
+app.use(express.static('public/static/images'));
+
 
 
 var checkAuth = (req, res, next) => {
