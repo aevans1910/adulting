@@ -364,3 +364,34 @@ legend {
   text-align: center;
 
 }
+
+.ind-post {
+  margin: 20px 100px;
+} 
+
+.ind-post > .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.ind-post > .left > a {
+  font-family: var(--font-header);
+  font-size: 20px;
+  color: var(--color-blue);
+  margin-right: 10px;
+}
+
+.ind-post > a {
+  font-size: 25px;
+  color: #042331;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.ind-post > .content {
+  display: flex;
+  justify-content: center;
+  margin: 10px 100px;
+}

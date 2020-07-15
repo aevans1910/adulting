@@ -1,8 +1,13 @@
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-    <a href="{{post.url}}" class="lead">{{post.title}}</a>
-    <a href="/users/{{post.author.username}}"><p>{{post.author.username}}</p></a>
-    <p>{{post.summary}}</p>
+  <div class="ind-post">
+    <div class="left">
+      <a href="/n/{{post.subreddit}}" id="subreddit">{{post.subreddit}}</a>
+      <a href="/users/{{post.author.username}}" id="author">
+        <small>{{post.author.username}}</small>
+      </a>
+    </div>
+    <a href="{{post.url}}" class="title">{{post.title}}</a>
+    <div class="content"><p>{{post.summary}}</p></div>
     <form action="/posts/{{post._id}}/comments" method="post">
     <textarea class='form-control' name="content" placeholder="Comment"></textarea>
     <div class="text-right">
