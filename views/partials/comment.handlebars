@@ -1,6 +1,6 @@
-<div class="col-xs-12 comment-indent">
+<div class="replies">
+    <a href="/users/{{comment.author.username}}">{{comment.author.username}}</a>
     <p>{{comment.content}}</p>
-    <a href="/users/{{comment.author.username}}"><p class="text-right">{{comment.author.username}}</p></a>
     <a href="/posts/{{postId}}/comments/{{comment._id}}/replies/new">Reply</a>
     {{#each comment.comments}}
         {{> comment comment=this postId=../postId}}

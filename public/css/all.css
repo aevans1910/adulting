@@ -395,3 +395,26 @@ legend {
   justify-content: center;
   margin: 10px 100px;
 }
+
+.replies {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin-left: 15%;
+  border-bottom: dotted var(--color-liteblue) 0.5px;
+}
+
+.replies > :nth-child(1) {
+  font-size: 14px;
+  color: var(--color-gray);
+}
+
+.replies > :nth-child(2) {
+  align-self: center;
+}
+
+.replies > :nth-child(3) {
+  align-self: flex-end;
+  color: #23dbdb;
+}
+
