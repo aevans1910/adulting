@@ -47,7 +47,10 @@ Users can post questions, respond to others, and upvote or downvote responses.
 
 They can also seach their posts and sort posts by category.
 
-It uses a Node.js framework with Handlebars.js views. 
+
+Frameworks: Node.js, Handlebars.js
+
+Languages: JavaScript, HTML, CSS
 
 
 #### Benefits
@@ -72,9 +75,12 @@ npm install
 
 #### Useful Links
 
-Frameworks: Node.js, Handlebars.js
+Heroku:
 
-Languages: JavaScript, HTML, CSS
+
+Logo:
+
+https://github.com/aevans1910/adulting_logo
 
 
 #### Developers
