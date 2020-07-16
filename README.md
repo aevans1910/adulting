@@ -82,6 +82,9 @@ Heroku Live App:
 
 https://adultingmakeschool.herokuapp.com/
 
+Trello Board:
+
+https://trello.com/b/gicFdtNx/adulting
 
 Logo:
 
