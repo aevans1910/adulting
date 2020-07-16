@@ -64,8 +64,7 @@ small {
 }
 body{
   font-family: sans-serif;
-
-  overflow: hidden;
+  /* overflow: hidden; */
   user-select: none;
 }
 .body {
@@ -341,7 +340,7 @@ a > .btn-success:active {
   border-color: var(--color-blue);
   background-color: var(--color-darkwhite);
   margin: 2rem 0 2rem 4rem;
-  width: 50%;
+  width: 40%;
   text-transform: uppercase;
   padding: 10px;
   border-radius: 20px;

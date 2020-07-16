@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const expressValidator = require('express-validator');
 // const app = express();
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const connectDb = require("./src/connection");
 const User = require("./src/User.model");
 
