@@ -473,6 +473,7 @@ footer{
   font-size: 18px;
   border-radius: 5px;
   transition: 0.3s;
+  color: var(--color-white);
 }
 .left .content .social a span:hover{
   background: #f12020;
