@@ -1,0 +1,419 @@
+/* Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..,700;1,400..700&family=Dancing+Script&family=Quicksand:wght@400..700&family=Raleway:wght@400..900&display=swap');
+
+
+/* General Reset */
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --color-green: #2ECC71;
+    --color-litegreen: #5EFCA1;
+    --color-gray: #354546;
+    --color-litegray: #D5E5E6;
+    --color-red: #D73C2C;
+    --color-litered: #F75C4C;
+    --color-purps: #8E44AD;
+    --color-litepurps: #AB69C6;
+    --color-blue: #1297E0;
+    --color-liteblue: #29C5FF;
+    --color-orange: #FB8C00;
+    --color-liteorange: #FFA726;
+    --color-yellow: #FFEB38;
+    --color-liteyellow: #FFF176;
+    --color-darkwhite: #EEEEEE;
+    --color-white: #FFF;
+    --color-dark: #212121;
+    --base-font-size: 12px;
+    --font-body: 'Cormorant Garamon', serif;
+    --font-link: 'Dancing Script', cursive;
+    --font-header: 'Quicksand', sans-serif;
+    --font-nav: 'Raleway', sans-serif;
+    --font-special: 'Consolas', 'courier-new';
+    scroll-behavior: smooth;
+}
+
+
+/* Side Scroll Bar */
+body::-webkit-scrollbar{
+  width: 16px;
+}
+body::-webkit-scrollbar-track{
+  background: #e6e6e6;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+body::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: linear-gradient(#3498db,#9b59b6);
+}
+body::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(#2691d9,#954eb1);
+}
+small {
+  color: var(--color-dark);
+}
+
+/* Navigation Bar */
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body{
+  font-family: sans-serif;
+  /* overflow: hidden; */
+  user-select: none;
+}
+.body {
+  margin: 50px;
+}
+nav .logo a{
+  color: white;
+  font-size: 33px;
+  font-weight: bold;
+  line-height: 70px;
+  padding-left: 110px;
+  transition: .5s;
+}
+nav{
+  height: 70px;
+  background: #063247;
+  box-shadow: 0 3px 15px rgba(0,0,0,.4);
+}
+nav ul{
+  float: right;
+  margin-right: 30px;
+}
+nav ul li{
+  display: inline-block;
+}
+nav ul li a{
+  color: white;
+  display: block;
+  padding: 0 15px;
+  line-height: 70px;
+  font-size: 20px;
+  background: #063247;
+  transition: .5s;
+}
+nav .logo a:hover,
+nav ul li a:hover,
+nav ul li a.active{  color: #23dbdb;
+}
+nav ul ul{
+  position: absolute;
+  top: 85px;
+  border-top: 3px solid #23dbdb;
+  opacity: 0;
+  visibility: hidden;
+}
+nav ul li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: .3s linear;
+}
+nav ul ul li{
+  width: 150px;
+  display: list-item;
+  position: relative;
+  border: 1px solid #042331;
+  border-top: none;
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+nav ul ul ul{
+  border-top: none;
+}
+nav ul ul ul li{
+  position: relative;
+  top: -70px;
+  left: 150px;
+}
+nav ul ul li a i{
+  margin-left: 45px;
+}
+section{
+  background: url(bg.jpeg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.comment-indent {
+  margin-left: 20px;
+}
+
+/* Forms */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  border: 3px solid #063247;
+  padding: 2rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  border-radius: 15px;
+  background-color: var(--color-darkwhite);
+}
+form label {
+  display: block;
+  padding: 10px;
+  font-size: 19px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+form label a {
+  color:white;
+}
+form h1 {
+  text-align: center;
+  margin-right: 20px;
+}
+form input, textarea {
+  display: block;
+  font-family: sans-serif;
+  width: 90%;
+  margin: 0 .25rem;
+  padding: .5rem;
+  min-width: 125px;
+  border: 1px solid transparent;
+  border-left: 5px solid var(--color-liteblue);
+  border-radius: 5px;
+  font-size: 18px;
+  transition: .5s ease-in-out;
+  margin-left: 0;
+}
+
+.text-muted {
+  font-size: 10px;
+  color: var(--color-dark);
+}
+form > button[type=submit]{
+  border-color: var(--color-blue);
+  background-color: var(--color-darkwhite);
+  margin: 2rem 0 2rem 4rem;
+  width: 70%;
+  text-transform: uppercase;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: calc(var(--base-font-size) * 1.5);
+  font-weight: bold;
+  letter-spacing: 5px;
+  transition: 500ms;
+}
+form > button[type=submit]:hover{
+  background: var(--color-liteblue);
+  color: white;
+  box-shadow: 0 2px var(--color-dark);
+  cursor: pointer;
+}
+
+/* New post button */
+a > .btn-success {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: var(--color-litegreen);
+  color: var(--color-dark);
+  box-shadow: var(--color-green);
+  transition: none;
+  font-family: var(--font-header);
+  width: 100px;
+  height: 50px;
+  border-radius: 0px 0px 5px 5px;
+}
+a > .btn-success:hover {
+  box-shadow: 0 4px var(--color-green);
+}
+a > .btn-success:active {
+  box-shadow: 0 0 var(--color-green);
+}
+
+/* New post submit button */
+.text-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.text-right > button[type=submit]{
+  border-color: var(--color-liteblue);
+  background-color: var(--color-darkwhite);
+  margin: 1rem 0;
+  width: auto;
+  text-transform: uppercase;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: calc(var(--base-font-size) * 1.5);
+  font-weight: bold;
+  letter-spacing: 5px;
+  transition: 500ms;
+}
+.text-right > button[type=submit]:hover{
+  background: var(--color-liteblue);
+  color: white;
+  box-shadow: 0 2px var(--color-dark);
+  cursor: pointer;
+}
+
+.posts-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#votes {
+  border: none;
+  background-color: none;
+  border-radius: 45px;
+  padding: 0;
+}
+#votes > button {
+  width: 20%;
+}
+
+.vote-box {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: center;
+  background-color: var(--color-darkwhite);
+  width: 600px;
+  margin: 10px;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.vote-box > .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.vote-box > .top > .left > a {
+  font-family: var(--font-header);
+  font-size: 20px;
+  color: var(--color-blue);
+  margin-right: 10px;
+}
+
+.vote-box > .top > .right > a {
+  color: var(--color-gray);
+}
+
+.vote-box > .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.vote-box > .content > #title {
+  font-size: 25px;
+  color: #042331;
+}
+
+.vote-box > .content > :nth-child(2) {
+  text-align: left;
+}
+
+#voting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  transform: translateX(-40px);
+}
+
+#voting > p {
+  transform: translate(35px, 50px);
+}
+
+#voting > form {
+  margin: 0;
+}
+
+#voting > form > button[type=submit]{
+  border-color: var(--color-blue);
+  background-color: var(--color-darkwhite);
+  margin: 2rem 0 2rem 4rem;
+  width: 40%;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: calc(var(--base-font-size) * 1.5);
+  font-weight: bold;
+  letter-spacing: 5px;
+  transition: 500ms;
+  justify-content: center;
+  align-content: center;
+}
+#voting > form > button[type=submit]:hover{
+  background: var(--color-liteblue);
+  color: white;
+  box-shadow: 0 2px var(--color-dark);
+  cursor: pointer;
+}
+
+legend {
+  font-size: calc(var(--base-font-size) * 2.5);
+  text-align: center;
+
+}
+
+.ind-post {
+  margin: 20px 100px;
+} 
+
+.ind-post > .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.ind-post > .left > a {
+  font-family: var(--font-header);
+  font-size: 20px;
+  color: var(--color-blue);
+  margin-right: 10px;
+}
+
+.ind-post > a {
+  font-size: 25px;
+  color: #042331;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.ind-post > .content {
+  display: flex;
+  justify-content: center;
+  margin: 10px 100px;
+}
+
+.replies {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin-left: 15%;
+  border-bottom: dotted var(--color-liteblue) 0.5px;
+}
+
+.replies > :nth-child(1) {
+  font-size: 14px;
+  color: var(--color-gray);
+}
+
+.replies > :nth-child(2) {
+  align-self: center;
+}
+
+.replies > :nth-child(3) {
+  align-self: flex-end;
+  color: #23dbdb;
+}
+

@@ -1,0 +1,8 @@
+<div class="replies">
+    <a href="/users/{{comment.author.username}}">{{comment.author.username}}</a>
+    <p>{{comment.content}}</p>
+    <a href="/posts/{{postId}}/comments/{{comment._id}}/replies/new">Reply</a>
+    {{#each comment.comments}}
+        {{> comment comment=this postId=../postId}}
+    {{/each}}
+</div>

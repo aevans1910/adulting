@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --}}
+    <link rel="stylesheet" type="text/css" href="/css/all.css">
+    <title>Adulting</title>
+  </head>
+  <body>
+
+    <nav>
+        <label class="logo"><a  href="/posts/:id">Adulting</a>
+        </label>
+            <ul>
+                <li>
+                    {{#if currentUser}}
+                        <a href="/post/new">
+                            <div><p>NEW POST</p></div>
+                        </a>
+                         <a href="/">
+                            <div><p>ALL POSTS</p></div>
+                        </a>
+                    {{/if}}
+                </li>
+            
+            </ul>
+            {{> navbar}}
+    </nav>
+    <div class="row">
+        
+    </div>
+    
+    <div class="body">
+        {{{ body }}}
+    </div>
+    <footer>Footer!!!</footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/95ebd4f632.js"></script>
+    <script rel="script" src="/js/posts.js"></script>
+  </body>
+</html>

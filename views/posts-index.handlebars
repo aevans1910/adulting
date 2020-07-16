@@ -1,0 +1,44 @@
+<div>
+    {{#if currentUser}}
+    <div>
+        <ul class="posts-all">
+
+            {{#each posts}}
+            <li class="list-group-item">
+                <div class="vote-box">
+                    <div class="top">
+                    <div class="left">
+                        <a href="/n/{{this.subreddit}}" id="subreddit">{{this.subreddit}}</a>
+                        <a href="/users/{{this.author.username}}" id="author">
+                            <small>{{this.author.username}}</small>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <a href="{{this.url}}" target="_blank" id="url">{{this.url}}</a>
+                    </div>
+                    </div>
+                    <div class="content">
+                        <a href="/posts/{{this._id}}" id="title">{{this.title}}</a>
+                        <p>{{this.summary}}</p>
+                    </div>
+                    <div id="voting">
+                        <form id="votes" class="vote-up" data-id="{{this._id}}">
+                            <button type="submit"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                        </form>
+                        <p>{{this.voteScore}}</p>
+                        <form id="votes" class="vote-down" data-id="{{this._id}}">
+                            <button type="submit"><i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{else}}
+    <h2>Please Log In To See Posts</h2>
+    <div>
+<img src="gifLogo.gif" alt="Logo" />   
+    </div>
+{{/if}}
+</div>
