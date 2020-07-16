@@ -65,16 +65,22 @@ Languages: JavaScript, HTML, CSS
 
 #### Getting Started
 
-##Installation instructions
+##Docker Installation instructions
+
+Make sure you have Docker Hub installed and running on your machine.
 
 Run the following commands:
 
-npm install 
+docker-compose up
+
+
 
 
 #### Useful Links
 
-Heroku:
+Heroku Live App: 
+
+https://adultingmakeschool.herokuapp.com/
 
 
 Logo:
